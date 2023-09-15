@@ -3,69 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tinder-ähnliches Design</title>
+    <title>Tinder-ähnliches Design mit Swipe-Funktion</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-            background-color: #f0f0f0;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #ffffff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-        }
+        /* ... (bestehende CSS-Stile) ... */
         .card {
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
+            /* ... (bestehende CSS-Stile) ... */
+            transition: transform 0.3s;
         }
-        .card img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
+        .card.disliked {
+            transform: translateX(-100%);
+            opacity: 0;
         }
-        .card-content {
-            margin-top: 10px;
-        }
-        .card-content h2 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-        .card-content p {
-            font-size: 1rem;
-            color: #555;
-        }
-        .button-container {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 10px;
-        }
-        .button-container button {
-            padding: 10px 20px;
-            font-size: 1rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .button-container button.like {
-            background-color: #4caf50;
-            color: #fff;
-        }
-        .button-container button.dislike {
-            background-color: #f44336;
-            color: #fff;
+        .card.liked {
+            transform: translateX(100%);
+            opacity: 0;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="card">
+        <div class="card" id="card">
             <img src="https://via.placeholder.com/300" alt="Profile Image">
             <div class="card-content">
                 <h2>Name</h2>
@@ -73,18 +30,36 @@
                 <p>Beschreibung: Eine kurze Beschreibung des Benutzers.</p>
                 <p>Standort: Stadt, Land</p>
                 <p>Hobbys: Wandern, Reisen, Lesen</p>
-                <div class="button-container">
-                    <button class="like">Like</button>
-                    <button class="dislike">Dislike</button>
-                </div>
             </div>
+        </div>
+
+        <div class="button-container">
+            <button onclick="dislike()">Dislike</button>
+            <button onclick="like()">Like</button>
         </div>
 
         <!-- Weitere Karten würden hier folgen -->
 
     </div>
+
+    <script>
+        const card = document.getElementById('card');
+
+        function dislike() {
+            card.classList.add('disliked');
+            setTimeout(() => {
+                // Entfernen der Karte nach der Animation
+                card.remove();
+            }, 300);
+        }
+
+        function like() {
+            card.classList.add('liked');
+            setTimeout(() => {
+                // Entfernen der Karte nach der Animation
+                card.remove();
+            }, 300);
+        }
+    </script>
 </body>
 </html>
-
-
-s
