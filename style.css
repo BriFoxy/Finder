@@ -1,1 +1,56 @@
-
+body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .card {
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .card-content {
+            margin-top: 10px;
+        }
+        .card-content h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .card-content p {
+            font-size: 1rem;
+            color: #555;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .button-container button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button-container button.like {
+            background-color: #4caf50;
+            color: #fff;
+        }
+        .button-container button.dislike {
+            background-color: #f44336;
+            color: #fff;
+        }
